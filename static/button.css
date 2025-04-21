@@ -1,0 +1,60 @@
+/* -------------- THE button -------------- */
+.button {
+/* text */
+	text-decoration: 		none;
+	font: 					1.77vw 'Droid Sans', sans-serif;
+/* layout */
+	padding: 				0.9vw 3.6vw 0.7vw 3.6vw;
+	display: 				inline-block;
+	position: 				relative;
+/* effects */
+	background-image: 	-webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) ));
+}
+/* -------------- icon -------------- */
+.button:before {
+	font: 			1.2em/0 'Pictos', sans-serif;
+	content: 		attr(data-icon); /* gets the icon value from the custom data attribute and puts it infront of the button label */
+	margin-right: 	0.4em;
+}
+/* -------------- colours -------------- */
+.button.pink {
+	color: 				hsl(340, 100%, 30%);
+	background-color: 	hsl(0, 100%, 30%);
+	box-shadow:
+    inset rgba(255,254,255,0.6) 0 0.3em .3em,
+    inset rgba(0,0,0,0.15) 0 -0.1em .3em,
+		hsl(0, 100%, 30%) 0 .1em 3px,
+    hsl(0, 90%, 20%) 0 .3em 1px,
+		rgba(0,0,0,0.2) 0 .5em 5px;
+}
+.button.pink:hover { 	background-color: hsl(120, 71%, 69%); }
+/* -------------- States -------------- */
+.button:active {
+
+  box-shadow: 		inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, /* inner shadow */
+ rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+  transform: 			translateY(.2em);
+}
+/* -------------- Fonts -------------- */
+.serif {
+	font-family: 'Lobster', serif;
+	font-weight: 			normal;
+}
+/* -------------- Materials -------------- */
+.button.glossy:after, .button.glass:after {
+	content: 	"";
+	position: 	absolute;
+    width: 		90%;
+    height: 	60%;
+    top: 		0;
+    left: 		5%;
+
+    background-image: 		-webkit-gradient(linear, 0% 0, 100% 0, from( rgba(255,255,255,.55) ), to( rgba(255,255,255,.5) ),
+    							color-stop(.5, rgba(255,255,255,0)), color-stop(.8, rgba(255,255,255,0)) );
+
+}
+/* -------------- Shapes -------------- */
+/* round */
+.round, .round.glossy:after, .round.glass:after {
+	border-radius: 	1em;
+}

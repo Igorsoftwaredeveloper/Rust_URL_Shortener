@@ -1,0 +1,73 @@
+body {
+    overflow: hidden;
+    background-image: url("background.jpg");
+    background-color: #382E2E;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+form {
+	text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5em;
+}
+
+.url-input {
+    font: inherit;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 0.3em;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0;
+    outline: 0;
+    font-size: 4vh;
+}
+
+.url-input:focus {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#shorten-button {
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vh;
+    border: 0;
+    margin: 3rem;
+    cursor: pointer;
+}
+
+#out {
+    font-size: 3vh;
+    color: cornflowerblue;
+}
+
+#out a {
+    color: cornflowerblue;
+}
+
+a {
+    color: #dd3344;
+}
+
+#link {
+	color: white;
+}
+
+h1 {
+    font-size: 4vh;
+}
+
+::placeholder {
+    font-size: 1.5vh;
+    color: black;
+}

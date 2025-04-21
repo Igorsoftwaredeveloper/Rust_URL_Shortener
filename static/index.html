@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>URL Shortener</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="main.css" type="text/css">
+		<link rel="stylesheet" href="button.css" type="text/css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <main>            
+        	<h1>Enter a url to shorten:</h1>				
+			<form action="/URLs" method="POST">				
+   				 <input type="text" class="url-input" name="site" placeholder="Write a link here"/>
+   			 	 <input type="text" class="url-input" id="shortKey" name="short_key" placeholder="Write the short link keyword"/>
+				 <a id="shorten-button" class="button pink serif round glass">Shorten!</a>
+			</form>
+			<p id="out">Your URL will appear here...</p>
+        </main>
+		<script>
+			document.querySelector('a').addEventListener('click', function(e) {
+			e.preventDefault();
+			let short_value = document.getElementById('shortKey').value;
+			document.getElementById('out').innerHTML = '<a href="http://127.0.0.1:8000/'+short_value+'" target="_blank">http://127.0.0.1:8000/'+short_value+'</a>';
+
+			function serialize (data) {
+				let obj = {};
+				for (let [key, value] of data) {
+					if (obj[key] !== undefined) {
+						if (!Array.isArray(obj[key])) {
+							obj[key] = [obj[key]];
+						}
+						obj[key].push(value);
+					} else {
+						obj[key] = value;
+					}
+				}
+				return obj;
+			}
+
+			let form = document.querySelector('form');
+			let data = new FormData(form);
+			let formValue = JSON.stringify(serialize(data));
+
+			fetch('http://127.0.0.1:8000',{
+				method: 'POST',
+				body: formValue,
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+		});
+		</script>
+    </body>
+</html>

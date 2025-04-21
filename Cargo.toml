@@ -1,0 +1,9 @@
+[package]
+name = "Rust_URL_Shortener"
+edition = "2024"
+
+[dependencies]
+mongodb = "2.8.1"
+rocket = { version = "0.5.0", features = ["json"] }
+rocket_db_pools = { version = "0.1.0", features = ["mongodb"] }
+serde_json = "1.0.114"
